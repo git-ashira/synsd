@@ -1,0 +1,29 @@
+[2025-10-05 18:42:42] Starting training...
+Model: models/rbs-model-name.pth
+Dataset: temp_data_files/alignment_results_rbs-model-name.csv
+Epochs: 1, Batch size: 16
+Using device: cpu
+Training samples: 3699
+Validation samples: 925
+[2025-10-05 18:46:56] Starting training...
+Model: models/rbs-model-name.pth
+Dataset: temp_data_files/alignment_results_rbs-model-name.csv
+Epochs: 1, Batch size: 16
+Using device: cpu
+Training samples: 3699
+Validation samples: 925
+[2025-10-05 18:53:19] Starting training...
+Model: models/rbs-model-name.pth
+Dataset: temp_data_files/alignment_results_rbs-model-name.csv
+Epochs: 1, Batch size: 16
+Using device: cpu
+Training samples: 3699
+Validation samples: 925
+Epoch 1/1, Batch 0/232, Loss 2.3064
+[2025-10-06 02:24:42] Starting training...
+Model: models/rbs-model-name.pth
+Dataset: temp_data_files/alignment_results_rbs-model-name.csv
+Epochs: 1, Batch size: 16
+Using device: cpu
+Training samples: 3699
+Validation samples: 925
