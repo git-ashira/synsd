@@ -170,12 +170,13 @@ with train_tab:
             try:
                 model_name = f"models/{name_of_new_model}.pth"
                 trans.main_train(model_name=model_name, dataset_csv=training_csv, num_epochs=epochs, batch_size=size_batch)
-                log(f"[train] Training completed successfully!")
+                # log(f"[train] Training completed successfully!")
             except Exception as e:
-                log(f"[train] Error occurred: {e}")
+                # log(f"[train] Error occurred: {e}")
             finally:
                 st.session_state.is_training = False
         thread = threading.Thread(target=training_thread)
+        thread.daemon = True
         thread.start()
 
     start_train = st.button("Start training", type="primary", disabled=not can_train, on_click=start_training)
@@ -263,11 +264,11 @@ with existing_tab:
             structure = f"./temp_data_files/{full_pred}.svg"
         st.write("**Predicted RBS+spacer**")
         st.code(st.session_state.pred_rbs or "—")
-        st.write("**Predicted Folding Energy of first 25 bases (Kcal/mol)**")
+        st.write("**Predicted Folding Energy of first 50 bases (Kcal/mol)**")
         st.code(folding_energy)
         st.write("**Predicted Binding Energy (using ACCUCCUUA as Anti-SD) (Kcal/mol)**")
         st.code(binding_energy)
-        st.write("**Predicted Folding structure of first 25 bases**")
+        st.write("**Predicted Folding structure of first 50 bases**")
         st.image(structure or "./temp_data_files/file.svg", caption="Predicted structure", width="stretch")
 
 
@@ -295,3 +296,13 @@ else:
     else:
         st.info("No logs yet.")
 
+# footer 
+st.markdown("---")  
+st.markdown(
+    "<p style='text-align: center; font-size: 12px;'>"
+    "Developed by Amandeep Singh Hira | University of Alberta iGEM 2025 | "
+    "<a href='https://2025.igem.wiki/ualberta'>Wiki</a> | "
+    "<a href='https://www.linkedin.com/in/amandeep-singh-hira-5a0bb1191/'>LinkedIn</a>"
+    "</p>", 
+    unsafe_allow_html=True
+)

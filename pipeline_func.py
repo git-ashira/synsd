@@ -307,7 +307,7 @@ def total_energy(rna_sequence, mrna_sequence, anti_sd_sequence=anti_SD):
         anti_sd_sequence (str): The anti-Shine-Dalgarno sequence (default: ACCUCCUUA)
     """
     folding_energy_seq = rna_sequence + mrna_sequence
-    folding_energy_seq = folding_energy_seq[:25]
+    folding_energy_seq = folding_energy_seq[:50]
     fc = RNA.fold_compound(folding_energy_seq)
     (folding_energy_structure, folding_energy) = fc.mfe()
 

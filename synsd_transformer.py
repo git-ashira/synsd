@@ -423,7 +423,7 @@ def train_model(model_name, model, train_loader, val_loader, vocab, num_epochs=5
             with open(log_file, "a") as f:
                 f.write('  New best model saved!\n')
 
-        print()
+        
 
 def main_train(model_name='best_rbs_spacer_model.pth', dataset_csv='ecoli_train.csv', num_epochs=50, batch_size=16):
     
