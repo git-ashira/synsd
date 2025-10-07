@@ -173,6 +173,7 @@ with train_tab:
                 # log(f"[train] Training completed successfully!")
             except Exception as e:
                 # log(f"[train] Error occurred: {e}")
+                pass
             finally:
                 st.session_state.is_training = False
         thread = threading.Thread(target=training_thread)
